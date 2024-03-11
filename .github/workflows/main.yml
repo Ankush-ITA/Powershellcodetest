@@ -1,0 +1,21 @@
+name: PSScriptAnalyzer
+
+on:
+  push:
+    branches:
+      - main  # Adjust this to match your repository's default branch
+
+jobs:
+  analyze-scripts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run PSScriptAnalyzer
+        uses: microsoft/psscriptanalyzer-action@v1.0
+        with:
+          path: .\\  # Specify the path to your PowerShell scripts (adjust as needed)
+          recurse: true
+          output: results.sarif
