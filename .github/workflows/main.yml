@@ -16,6 +16,6 @@ jobs:
       - name: Run PSScriptAnalyzer
         uses: microsoft/psscriptanalyzer-action@v1.0
         with:
-          path: .\\  # Specify the path to your PowerShell scripts (adjust as needed)
+          path: .\  # Specify the path to your PowerShell scripts (adjust as needed)
           recurse: true
           output: results.sarif
